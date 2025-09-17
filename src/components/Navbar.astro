@@ -1,0 +1,54 @@
+---
+import { site } from '../config/site';
+---
+
+<a href="#main" id="skip-link">Aller au contenu principal</a>
+<header class="app-header">
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;height:auto;padding:var(--space-l) var(--space-2xl);">
+    <div>
+      <a href="/" aria-label={`Accueil ${site.name}`} style="font-weight:800;font-size:2rem;color:var(--color-text);">
+        {site.name}
+      </a>
+    </div>
+    <nav class="nav simple-nav" role="navigation" aria-label="Menu principal">
+      <a href="#about" class="about-link">À propos</a>
+      <a href="#testimonials" class="testimonials-link">Avis</a>
+      <a href="#contact" class="button">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    const skipLink = document.getElementById('skip-link');
+
+    // Handle skip link accessibility
+    if (skipLink) {
+      skipLink.addEventListener('focus', function() {
+        skipLink.style.left = '1rem';
+        skipLink.style.top = '1rem';
+      });
+      skipLink.addEventListener('blur', function() {
+        skipLink.style.left = '-999px';
+        skipLink.style.top = '-999px';
+      });
+    }
+
+    // Smooth scrolling for anchor links (enhance the existing CSS scroll-behavior)
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  });
+</script>

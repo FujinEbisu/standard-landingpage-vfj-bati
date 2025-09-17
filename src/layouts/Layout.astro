@@ -1,0 +1,48 @@
+---
+import '../styles/index.css';
+import { site } from '../config/site';
+interface Props { title?: string; description?: string; }
+const { title = site.title, description = site.description } = Astro.props as Props;
+---
+<!doctype html>
+<html lang="fr" dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+		<meta property="og:site_name" content={site.name} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={site.company.url} />
+		<meta name="twitter:card" content="summary" />
+		<meta name="theme-color" content={site.accentColor} />
+		<script type="application/ld+json">{JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: site.company.name,
+			url: site.company.url,
+			description,
+		})}</script>
+
+	</head>
+	<body>
+		<main id="main">
+			<slot />
+		</main>
+		<footer>
+			<div class="footer">
+						<nav style="margin-bottom:.5rem;">
+							<a href="/#about" style="margin-right:1.5rem;" title="En savoir plus sur notre entreprise de maçonnerie">À propos</a>
+							<a href="/#testimonials" style="margin-right:1.5rem;" title="Lire les avis de nos clients satisfaits">Avis</a>
+							<a href="/#contact" style="margin-right:1.5rem;" title="Contactez-nous pour votre projet de maçonnerie">Contact</a>
+							<a href="/privacy" title="Consultez notre politique de confidentialité RGPD">Politique de confidentialité</a>
+						</nav>
+						<div>&copy; {new Date().getFullYear()} {site.company.name}. Tous droits réservés.</div>
+						<div>Un site réalisé par <a href="https://goverstudio.com" title="Agence web Gover Studio - Création de sites internet professionnels">Gover_Studio.</a></div>
+			</div>
+		</footer>
+	</body>
+</html>

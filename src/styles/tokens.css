@@ -1,0 +1,28 @@
+:root {
+  --color-bg: #F7F9FA;
+  --color-bg-alt: #FFFFFF;
+  --color-text: #252525;
+  --color-text-inversed: #e3e3e3;
+  --color-text-muted: #4B5563;
+  --color-accent: #ca4211;
+  --color-accent-hover: #aa3910;
+  --color-border: #E2E8EC;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-s: 0.75rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+
+
+  --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+  --transition-base: 160ms ease;
+}

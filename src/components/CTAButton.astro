@@ -1,0 +1,8 @@
+---
+interface Props { href?: string; label: string; variant?: 'primary' | 'outline'; size?: 'sm'|'md'; }
+const { href = '#contact', label, variant = 'primary', size='md' } = Astro.props as Props;
+---
+<a href={href} class:list={[ 'button', variant === 'outline' && 'outline', size === 'sm' && 'small' ]}>{label}</a>
+<style>
+  a.small { padding: 0.6rem .9rem; font-size: .8rem; }
+</style>

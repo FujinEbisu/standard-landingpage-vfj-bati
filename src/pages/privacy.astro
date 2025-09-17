@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../config/site';
+import SectionWrapper from '../components/SectionWrapper.astro';
+---
+
+<Layout title={`Politique de Confidentialité - ${site.name}`} description={`Politique de confidentialité du site ${site.name}.`}>
+    <div class="container-poly">
+      <h1>Politique de Confidentialité</h1>
+      <p>Dernière mise à jour : {new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+      <h2>1. Introduction</h2>
+      <p>
+        Cette politique de confidentialité vous informe sur la manière dont {site.company.name} (ci-après "nous", "notre") collecte et traite vos données personnelles via le site web <a href={site.company.url}>{site.company.url}</a> (ci-après "le site"). Le respect de votre vie privée est notre priorité.
+      </p>
+
+      <h2>2. Responsable du traitement</h2>
+      <p>
+        Le responsable du traitement de vos données personnelles est {site.company.name}. Pour toute question relative à la protection de vos données, vous pouvez nous contacter à l'adresse e-mail suivante : <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.
+      </p>
+
+      <h2>3. Données collectées et finalités</h2>
+      <p>
+        Nous collectons les données que vous nous fournissez directement via le formulaire de contact, notamment votre nom, votre adresse e-mail et le contenu de votre message.
+      </p>
+      <p>
+        Ces données sont collectées dans le but exclusif de répondre à votre demande de contact et d'assurer le suivi commercial qui pourrait en découler. La base légale de ce traitement est votre consentement, matérialisé par l'envoi du formulaire.
+      </p>
+
+      <h2>4. Durée de conservation</h2>
+      <p>
+        Vos données personnelles sont conservées pour la durée nécessaire au traitement de votre demande, et pour une durée maximale de trois ans après notre dernier contact.
+      </p>
+
+      <h2>5. Vos droits</h2>
+      <p>
+        Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants concernant vos données personnelles :
+      </p>
+      <ul>
+        <li><strong>Droit d'accès :</strong> Vous pouvez obtenir la confirmation que des données vous concernant sont traitées et en obtenir une copie.</li>
+        <li><strong>Droit de rectification :</strong> Vous pouvez demander la correction de données inexactes ou incomplètes.</li>
+        <li><strong>Droit à l'effacement ("droit à l'oubli") :</strong> Vous pouvez demander la suppression de vos données, sous certaines conditions.</li>
+        <li><strong>Droit à la limitation du traitement :</strong> Vous pouvez demander de geler temporairement l'utilisation de certaines de vos données.</li>
+        <li><strong>Droit à la portabilité :</strong> Vous pouvez demander à recevoir vos données dans un format structuré et courant.</li>
+        <li><strong>Droit d'opposition :</strong> Vous pouvez vous opposer à tout moment au traitement de vos données pour des motifs légitimes.</li>
+      </ul>
+      <p>
+        Pour exercer ces droits, veuillez nous contacter à <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.
+      </p>
+
+      <h2>6. Destinataires des données</h2>
+      <p>
+        Vos données sont destinées aux services internes de {site.company.name} et ne sont partagées avec aucun tiers, à l'exception des prestataires techniques nécessaires au fonctionnement du site (comme notre service d'envoi de formulaires, Web3Forms), qui sont eux-mêmes conformes au RGPD.
+      </p>
+
+      <h2>7. Sécurité</h2>
+      <p>
+        Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles pour protéger vos données personnelles contre la destruction, la perte, l'altération, la divulgation non autorisée ou l'accès non autorisé.
+      </p>
+
+      <h2>8. Cookies</h2>
+      <p>
+        Ce site n'utilise pas de cookies de suivi ou publicitaires. Seuls des cookies fonctionnels, essentiels au bon fonctionnement du site, peuvent être utilisés.
+      </p>
+
+      <h2>9. Réclamation</h2>
+      <p>
+        Si vous estimez que vos droits n'ont pas été respectés, vous avez le droit d'introduire une réclamation auprès de l'autorité de contrôle compétente, la Commission Nationale de l'Informatique et des Libertés (CNIL) en France.
+      </p>
+    </div>
+</Layout>
+<style>
+  .container-poly {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-l);
+  }
+  h1, h2 {
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-s);
+  }
+  p, ul {
+    margin-bottom: var(--space-m);
+    line-height: 1.6;
+  }
+  ul {
+    padding-left: var(--space-l);
+  }
+  li {
+    margin-bottom: var(--space-s);
+  }
+</style>
