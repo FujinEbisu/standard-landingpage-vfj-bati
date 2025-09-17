@@ -29,7 +29,6 @@ src/
 		Testimonials.astro
 		ContactForm.astro
 		CTAButton.astro
-		SectionWrapper.astro
 public/
 	favicon.svg
 	robots.txt
@@ -49,7 +48,7 @@ astro.config.mjs           # Config Astro + sitemap + domain (site)
 | Formulaire & champs | `src/components/ContactForm.astro` | Champ hidden `access_key`, labels, placeholders, validation |
 | Loader formulaire | `ContactForm.astro` | CSS `.loader` & logique JS inline `handleSubmit` |
 | Navigation / Footer / Meta HTML | `src/layouts/Layout.astro` | Liens nav, footer, meta tags, JSON-LD |
-| Ordre / insertion de sections | `src/pages/index.astro` | Réordonner blocs `<SectionWrapper>` |
+| Ordre / insertion de sections | `src/pages/index.astro` |
 | Domaine officiel (sitemap + canonical) | `astro.config.mjs` & `robots.txt` | Remplacer `https://example.com` |
 | Robots / SEO basique | `public/robots.txt` | URL sitemap + directives crawlers |
 | JSON-LD description | `Layout.astro` ou `site.ts` | Valeurs `description`, `name`, `url` |
@@ -77,13 +76,7 @@ astro.config.mjs           # Config Astro + sitemap + domain (site)
 		 <p>Décrivez vos offres principales ici.</p>
 	 </div>
 	 ```
-3. L’insérer dans `src/pages/index.astro` :
-	 ```astro
-	 <SectionWrapper id="services" bg="alt" narrow>
-		 <Services />
-	 </SectionWrapper>
-	 ```
-4. Ajouter lien nav (facultatif) dans `Layout.astro`.
+3. Ajouter lien nav (facultatif) dans `Layout.astro`.
 
 ## 8. Modifier les Témoignages
 Ouvrir `Testimonials.astro` et éditer le tableau `const testimonials = [...]`.
