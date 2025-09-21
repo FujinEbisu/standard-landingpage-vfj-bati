@@ -1,5 +1,5 @@
 export const site = {
-  name: 'Example',
+  name: 'VFJ Bâti Vincent',
   title: 'Expertise en Maçonnerie & Construction',
   description: "Entreprise de maçonnerie spécialisée dans la construction, la rénovation et l’aménagement. Qualité, fiabilité et savoir-faire au service de vos projets résidentiels et professionnels.",
   locale: 'fr_FR',
@@ -8,7 +8,7 @@ export const site = {
   twitter: '',
   linkedin: '',
   company: {
-    name: 'Example Maçonnerie',
+    name: 'VFJ Bâti Vincent Maçonnerie',
     url: 'https://example.com',
   },
   accentColor: '#2F6F5E',

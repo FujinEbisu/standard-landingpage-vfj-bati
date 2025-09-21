@@ -42,7 +42,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-accent-hover);
+  color: var(--color-text-inversed);
 }
 
 /* Header nav */
